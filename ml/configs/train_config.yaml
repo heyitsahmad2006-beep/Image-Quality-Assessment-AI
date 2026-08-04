@@ -1,0 +1,35 @@
+project_name: Image-Quality-Assessment-AI
+seed: 42
+img_size: 224
+batch_size: 16
+epochs: 15
+learning_rate: 0.0003
+weight_decay: 0.0001
+backbone: "convnext_tiny"  # options: convnext_tiny, efficientnet_b0, resnet18
+num_defects: 8
+defects:
+  - blur
+  - glare
+  - darkness
+  - overexposure
+  - motion_artifacts
+  - occlusion
+  - poor_framing
+  - low_resolution
+
+suitability_classes:
+  - "Not Suitable"
+  - "Needs Improvement"
+  - "Suitable"
+  - "Highly Suitable"
+
+loss_weights:
+  defect_bce: 1.0
+  severity_l1: 1.0
+  quality_l1: 1.5
+  suitability_ce: 1.0
+
+device: "auto"
+mixed_precision: true
+checkpoint_dir: "../artifacts/checkpoints"
+weights_dir: "weights"

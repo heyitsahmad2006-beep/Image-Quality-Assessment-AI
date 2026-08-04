@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #050508;
+    color: #F3F4F6;
+    overflow-x: hidden;
+  }
+}
+
+/* Background animated grid overlay */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+}
+
+/* Glassmorphism styling */
+.glass-panel {
+  background: rgba(17, 17, 26, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 25px -5px rgba(139, 92, 246, 0.3);
+  transform: translateY(-2px);
+}
+
+/* 3D Interactive Button Effects */
+.btn-3d-purple {
+  background: linear-gradient(135deg, #6D28D9 0%, #3D1B69 100%);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  box-shadow: 0 4px 14px 0 rgba(109, 40, 217, 0.39);
+  transition: all 0.2s ease-out;
+}
+
+.btn-3d-purple:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(109, 40, 217, 0.55);
+  border-color: rgba(167, 139, 250, 0.6);
+}
+
+.btn-3d-purple:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px 0 rgba(109, 40, 217, 0.3);
+}
+
+/* Custom glowing scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090F;
+}
+::-webkit-scrollbar-thumb {
+  background: #24143D;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6D28D9;
+}

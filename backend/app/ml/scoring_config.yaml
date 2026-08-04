@@ -1,0 +1,21 @@
+# Image Quality Assessment AI — Scoring & Fusion Configuration
+
+scoring_weights:
+  pretrained_weight: 0.75
+  technical_weight: 0.25
+
+defect_weights:
+  blur: 0.25
+  low_resolution: 0.20
+  darkness: 0.15
+  overexposure: 0.15
+  glare: 0.10
+  motion_artifacts: 0.08
+  occlusion: 0.04
+  poor_framing: 0.03
+
+model_config:
+  name: "NIMA_MobileNet_NR"
+  architecture: "No-Reference Deep Perceptual Neural Network"
+  input_resolution: [224, 224]
+  scale_type: "sigmoid_0_1"
